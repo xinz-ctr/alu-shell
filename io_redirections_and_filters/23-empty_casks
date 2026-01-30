@@ -1,0 +1,5 @@
+#!/bin/bash
+find . -empty -print | while read -r path; do
+    echo "${path##*/}"
+done
+
