@@ -1,5 +1,2 @@
 #!/bin/bash
-find . -empty -print | while read -r path; do
-    echo "${path##*/}"
-done
-
+find . -empty -exec bash -c 'for f; do echo "${f##*/}"; done' _ {} +
