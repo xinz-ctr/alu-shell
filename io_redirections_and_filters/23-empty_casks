@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -empty -print | while read f; do echo "${f##*/}"; done
+find . -empty -printf "%f\n"
