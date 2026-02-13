@@ -1,16 +1,5 @@
 #!/usr/bin/env bash
-# Calculates the average of numbers from standard input
+# Calculates the average of numbers using awk
 # shellcheck shell=bash
-sum=0
-count=0
+awk '{ sum += $1; count++ } END { if (count > 0) print sum / count }'
 
-while read -r number
-do
-    sum=$((sum + number))
-    count=$((count + 1))
-done
-
-if [ "$count" -ne 0 ]
-then
-    echo $((sum / count))
-fi
