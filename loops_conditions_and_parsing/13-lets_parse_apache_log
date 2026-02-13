@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Prints the 5th field from /etc/passwd using awk
+# shellcheck shell=bash
+awk -F: '{ print $5 }' /etc/passwd
