@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# shellcheck shell=bash
+PIDFILE="/var/run/myscript.pid"
+
+echo $$ > "$PIDFILE"
+
+trap 'rm -f "$PIDFILE"; exit' SIGTERM
+trap 'echo "Caught SIGINT"' SIGINT
+trap 'echo "Caught SIGQUIT"' SIGQUIT
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
