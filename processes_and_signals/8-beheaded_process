@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# shellcheck shell=bash
+pkill -f 7-highlander
+
