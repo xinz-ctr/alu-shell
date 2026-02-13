@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # loop
 # shellcheck shell=bash
+i=1
 while [ "$i" -le 10 ]
 do
 echo "Best School"
