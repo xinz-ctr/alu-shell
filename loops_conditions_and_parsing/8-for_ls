@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Displays only the part of filenames after the first dash
+# shellcheck shell=bash
+for file in *
+do
+    echo "${file#*-}"
+done
