@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# shellcheck shell=bash
+
+PIDFILE="/var/run/manage_my_process.pid"
+
+echo "$$" > "$PIDFILE"
+
+cleanup() {
+    rm -f "$PIDFILE"
+    exit 0
+}
+
+trap cleanup SIGTERM
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done

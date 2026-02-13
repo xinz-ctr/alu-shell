@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# shellcheck shell=bash
+PIDFILE="/var/run/myscript.pid"
+SCRIPT="./9-process_and_pid_file.sh"
+
+case "$1" in
+    start)
+        if [ -f "$PIDFILE" ]; then
+            echo "Process already running"
+        else
+            $SCRIPT &
+            echo "Process started"
+        fi
+        ;;
+    stop)
+        if [ -f "$PIDFILE" ]; then
+            kill "$(cat $PIDFILE)"
+            rm -f "$PIDFILE"
+            echo "Process stopped"
+        else
+            echo "No process running"
+        fi
+        ;;
+    restart)
+        if [ -f "$PIDFILE" ]; then
+            kill "$(cat $PIDFILE)"
+            rm -f "$PIDFILE"
+        fi
+        $SCRIPT &
+        echo "Process restarted"
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        ;;
+esac
