@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Displays usernames and user IDs from /etc/passwd
+# shellcheck shell=bash
+while IFS=: read -r username _ uid _
+do
+    echo "$username:$uid"
+done < /etc/passwd
