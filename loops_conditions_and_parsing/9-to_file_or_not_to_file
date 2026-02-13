@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 # Checks the type of a file
 # shellcheck shell=bash
-if [ -e "$1" ]
+i="school"
+if [ "$i" -e ]
 then
-    if [ -f "$1" ]
+    if [ "$i" -f  ]
     then
-        echo "$1 is a regular file"
-    elif [ -d "$1" ]
+        echo "$i is a regular file"
+    elif [ "$i" -d ]
     then
-        echo "$1 is a directory"
+        echo "$i is a directory"
     else
-        echo "$1 is another type of file"
+        echo "$i is another type of file"
     fi
 else
-    echo "$1 does not exist"
+    echo "$i does not exist"
 fi
