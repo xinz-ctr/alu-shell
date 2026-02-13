@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # shellcheck shell=bash
+ps -ef | grep bash | grep -v grep
 
-ps -ef
